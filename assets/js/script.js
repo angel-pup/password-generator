@@ -7,6 +7,15 @@
   const symbols = "!\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~".split("");
 
   /**
+   * For picking a random item from a passed in array
+   * @param _ passed in array
+   * @returns {*} returns a random value from the array
+   */
+  function chooseRandom(_) {
+    return _[Math.floor(Math.random() * _.length)];
+  }
+
+  /**
    * Prompts user for length of password and the types of characters they wish to include in the password
    * @returns {string} returns randomly generated password
    */
@@ -38,21 +47,20 @@
       // Ensure at least one character type has been chosen, prepare alert if not
       if (options.length !== 0) {
         // Pick characters until password length condition is satisfied
-        for (let i = 0; i < passLength; i++) {
-
-          // Choose character type at random, then choose character of that type at random
-          switch (options[Math.floor(Math.random() * options.length)]) {
+        while(passLength--) {
+          // Choose type at random, then choose character of that type at random
+          switch (chooseRandom(options)) {
             case 0:
-              password += upperAlpha[Math.floor(Math.random() * upperAlpha.length)];
+              password += chooseRandom(upperAlpha);
               break;
             case 1:
-              password += lowerAlpha[Math.floor(Math.random() * lowerAlpha.length)];
+              password += chooseRandom(lowerAlpha);
               break;
             case 2:
-              password += numbers[Math.floor(Math.random() * numbers.length)];
+              password += chooseRandom(numbers);
               break;
             case 3:
-              password += symbols[Math.floor(Math.random() * symbols.length)];
+              password += chooseRandom(symbols);
               break;
             default:
               // Do nothing; Code execution should never reach here
