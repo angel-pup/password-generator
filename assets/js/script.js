@@ -36,7 +36,7 @@
 
     // Do not prompt user further unless prior conditions are met
     if (!invalid) {
-
+      
       // Prompt user for types of characters they wish to use, log which characters go unused
       confirm("Press OK to use UPPERCASE letters.") ? options.push(0) : console.log("No UPPERCASE letters.");
       confirm("Press OK to use lowercase letters.") ? options.push(1) : console.log("No lowercase letters.");
