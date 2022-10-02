@@ -27,7 +27,6 @@
     let alertMessage = "";
     let password = "";
 
-
     // Prompt user for length of password
     passLength = prompt("Length of password?");
 
@@ -39,10 +38,10 @@
     if (!invalid) {
 
       // Prompt user for types of characters they wish to use, log which characters go unused
-      confirm("Use UPPERCASE letters?") ? options.push(0) : console.log("No UPPERCASE letters.");
-      confirm("Use lowercase letters?") ? options.push(1) : console.log("No lowercase letters.");
-      confirm("Use Numb3rs?") ? options.push(2) : console.log("No Numb3rs.");
-      confirm("Use $ymbols?") ? options.push(3) : console.log("No $ymbols.");
+      confirm("Press OK to use UPPERCASE letters.) ? options.push(0) : console.log("No UPPERCASE letters.");
+      confirm("Press OK to use lowercase letters.") ? options.push(1) : console.log("No lowercase letters.");
+      confirm("Press OK to use Numb3rs.") ? options.push(2) : console.log("No Numb3rs.");
+      confirm("Press OK to use $ymbols.") ? options.push(3) : console.log("No $ymbols.");
 
       // Ensure at least one character type has been chosen, prepare alert if not
       if (options.length !== 0) {
