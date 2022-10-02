@@ -39,7 +39,7 @@
     if (!invalid) {
 
       // Prompt user for types of characters they wish to use, log which characters go unused
-      confirm("Use UPPERCASE letters?") ? options.push(0) : console.log("No UPPERCASE characters.");
+      confirm("Use UPPERCASE letters?") ? options.push(0) : console.log("No UPPERCASE letters.");
       confirm("Use lowercase letters?") ? options.push(1) : console.log("No lowercase letters.");
       confirm("Use Numb3rs?") ? options.push(2) : console.log("No Numb3rs.");
       confirm("Use $ymbols?") ? options.push(3) : console.log("No $ymbols.");
