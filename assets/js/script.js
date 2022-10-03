@@ -1,10 +1,11 @@
   // Assignment code here
-
   // Initialize constant arrays, for picking characters later on
   const upperAlpha = [...Array(26)].map((_, i) => String.fromCharCode(i + 65));
   const lowerAlpha = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
   const numbers = [...Array(10)].map((_, i) => i);
   const symbols = "!\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~".split("");
+  // Get references to the #generate element
+  const generateBtn = document.querySelector("#generate");
 
   /**
    * For picking a random item from a passed in array
@@ -76,9 +77,6 @@
     alert(alertMessage);
   }
 
-  // Get references to the #generate element
-  const generateBtn = document.querySelector("#generate");
-
   // Write password to the #password input
   function writePassword() {
     const password = generatePassword();
@@ -86,6 +84,5 @@
 
     passwordText.value = password;
   }
-
   // Add event listener to generate button
   generateBtn.addEventListener("click", writePassword);
