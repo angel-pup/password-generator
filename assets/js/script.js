@@ -64,22 +64,16 @@
             default:
               // Do nothing; Code execution should never reach here
                   throw new Error("Code execution did, in fact, reach here.");
-
           }
-
         }
         // Return generated password
         return password;
-
       } else {
         alertMessage = "Please choose at least one kind of character of which to generate the password with."
-
       }
-
     }
     // Will reach alert if password conditions aren't met, returns appropriate alert message
     alert(alertMessage);
-
   }
 
   // Get references to the #generate element
@@ -91,7 +85,6 @@
     const passwordText = document.querySelector("#password");
 
     passwordText.value = password;
-
   }
 
   // Add event listener to generate button
