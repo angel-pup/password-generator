@@ -28,11 +28,12 @@
     let password = "";
 
     // Prompt user for length of password
-    passLength = prompt("Length of password?");
+    passLength = prompt("Password length?\n[Must be anywhere from 8 to 128 characters long].\n\n");
 
     // Prepare alert message if password length is invalid
-    isNaN(passLength) || passLength < 8 || passLength > 128 ?
-        alertMessage = "Password length must be a valid number between 7 and 129." : invalid = false;
+    isNaN(passLength) || passLength < 8 || passLength > 128
+        ? alertMessage = "Please input a valid number."
+        : invalid = false;
 
     // Do not prompt user further unless prior conditions are met
     if (!invalid) {
@@ -62,6 +63,7 @@
               break;
             default:
               // Do nothing; Code execution should never reach here
+                  throw new Error("Code execution did, in fact, reach here.");
 
           }
 
