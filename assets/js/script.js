@@ -1,8 +1,6 @@
 // Assignment code here
 // Initialize constant arrays, for picking characters later on
 const upperAlpha = [...Array(26)].map((_, i) => String.fromCharCode(i + 65));
-// const upperAlpha = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-// const upperAlpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
 const lowerAlpha = [...Array(26)].map((_, i) => String.fromCharCode(i + 97));
 const numbers = [...Array(10)].map((_, i) => i);
 const symbols = "!\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~".split("");
