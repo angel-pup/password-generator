@@ -40,11 +40,12 @@ function generatePassword() {
 
   // Do not prompt user further unless prior conditions are met
   if (!invalid) {
-    // Prompt user for types of characters they wish to use, log which characters go unused
-    confirm("Press OK to use UPPERCASE letters.") ? options.push(0) : console.log("No UPPERCASE letters.");
-    confirm("Press OK to use lowercase letters.") ? options.push(1) : console.log("No lowercase letters.");
-    confirm("Press OK to use Numb3rs.") ? options.push(2) : console.log("No Numb3rs.");
-    confirm("Press OK to use $ymbols.") ? options.push(3) : console.log("No $ymbols.");
+
+    // Prompt user for types of characters they wish to use
+    if(confirm("Press OK to use UPPERCASE letters.")) { options.push("UPPERCASE"); }
+    if(confirm("Press OK to use lowercase letters.")) { options.push("LOWERCASE"); }
+    if(confirm("Press OK to use Numb3rs.")) { options.push("NUMBERS"); }
+    if(confirm("Press OK to use $ymbols.")) { options.push("SYMBOLS"); }
 
     // Ensure at least one character type has been chosen, prepare alert if not
     if (options.length !== 0) {
@@ -52,16 +53,16 @@ function generatePassword() {
       while(passLength--) {
         // Choose type at random, then choose character of that type at random
         switch (chooseRandom(options)) {
-          case 0:
+          case "UPPERCASE":
             password += chooseRandom(upperAlpha);
             break;
-          case 1:
+          case "LOWERCASE":
             password += chooseRandom(lowerAlpha);
             break;
-          case 2:
+          case "NUMBERS":
             password += chooseRandom(numbers);
             break;
-          case 3:
+          case "SYMBOLS":
             password += chooseRandom(symbols);
             break;
           default:
